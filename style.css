@@ -1,0 +1,358 @@
+/* css reset */
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+/* css variables */
+:root {
+    --navbar-height: 200px;
+}
+
+/* navigation bar */
+#container-navbar {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#container-navbar::before {
+    content: "";
+    background-color: rgb(10, 9, 9);
+    position: absolute;
+    top: 0px;
+    height: 98%;
+    width: 100%;
+    z-index: -1;
+
+}
+
+#logo {
+    margin: 6px 22px;
+}
+
+/* list styling */
+#container-navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 0px 18px;
+}
+
+#container-navbar li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    display: block;
+    padding: 0px 5px;
+    font-size: 1.3rem;
+    border-radius: 20px;
+    margin: 0px 7px;
+    font-weight: bolder;
+
+}
+
+#container-navbar li a:hover {
+    background-color: white;
+    color: black;
+}
+
+/* home section */
+#container-home {
+    height: 546px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+
+}
+
+#container-home::before {
+    content: "";
+    background: url(../img/bg2.jpg) no-repeat center center/cover;
+    position: absolute;
+    top: -75px;
+    height: 114%;
+    width: 100%;
+    z-index: -1;
+    opacity: .88;
+}
+
+#container-home h1 {
+    color: white;
+    text-shadow: 6px 5px 10px black;
+}
+
+#container-home p {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: white;
+    text-shadow: 6px 5px 10px black;
+}
+
+/* services section */
+#services {
+    display: flex;
+    margin: 19px;
+}
+
+#services .box {
+    border: 2px solid red;
+    margin: 4px 6px;
+    padding: 30px;
+    border-radius: 28px;
+    background-color: #ede8e8;
+
+}
+
+#services .box img {
+    height: 150px;
+    display: block;
+    margin: auto;
+}
+
+/* clients section */
+.container-clients {
+    border: 2px solid gray;
+    position: relative;
+    /* height: 325px;*/
+}
+
+.container-clients::before {
+    content: "";
+    background: url(../img/bg1.jpg) no-repeat center center/cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: .4;
+}
+
+.container-clients h1 {
+    font-size: 2.6rem;
+}
+
+.client-items {
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    padding: 29px;
+}
+
+.client-items img {
+    text-shadow: 4px 4px 9px green;
+    height: 80px;
+    margin: 29px;
+}
+
+/* contact us section */
+.container-contactus {
+    border: 2px solid gray;
+    position: relative;
+}
+
+.container-contactus::before {
+    content: "";
+    background: url(../img/contact.jpg) no-repeat center center/cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: .4;
+
+}
+
+.container-contactus h1 {
+    font-size: 2.6rem;
+
+}
+
+.contactus-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.contactus-items input {
+    width: 40%;
+    padding: 5px 0px;
+    border: 2px solid #d57070;
+    border-radius: 8px;
+    padding-left: 4px;
+}
+
+.contactus-items label {
+    width: 40%;
+    font-size: 1rem;
+    font-weight: bold;
+    padding-bottom: 2px;
+}
+
+.contactus-items textarea {
+    width: 40%;
+    border: 2px solid #d57070;
+    border-radius: 8px;
+}
+
+.contactus-items .btn {
+    width: 40%;
+    box-shadow: -2px 2px 10px black;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 17px 5px;
+}
+
+
+
+/* utility classes */
+.h-primary {
+    font-size: 3.6rem;
+    padding: 12px;
+}
+
+.h-secondary {
+    font-size: 2.1rem;
+    padding: 13px;
+}
+
+.center {
+    text-align: center;
+}
+
+.btn {
+    background-color: brown;
+    border: 2px solid white;
+    border-radius: 12px;
+    color: white;
+    margin: 17px;
+    padding: 6px 9px;
+    font-weight: bolder;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* How to add a Media Quaries */
+
+/* PART-1 */
+@media screen and (max-width: 880px) {
+    #services {
+        flex-direction: column;
+    }
+
+    .client-items {
+        flex-wrap: wrap;
+        overflow: hidden;
+    }
+}
+@media screen and (max-width: 645px) {
+    .contactus-items input {
+        width: 63%;
+        
+    }
+    
+    .contactus-items label {
+        width: 63%;
+        font-size: .8rem;
+    }
+    
+    .contactus-items textarea {
+        width: 63%;
+    }
+    
+    .contactus-items .btn {
+        width: 38%;
+    }
+}
+
+
+/* PART-2 */
+@media screen and (max-width: 585px) {
+    #container-navbar {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #container-home::before {
+        top: -99px;
+        height: 118%;
+    }
+
+    #container-navbar li a {
+        font-size: 1rem;
+        
+    }
+
+    #container-home p {
+        font-size: 1.2rem;
+    }
+
+    .h-primary {
+        font-size: 2.8rem;
+    }
+
+    .h-secondary {
+        font-size: 1.9rem;
+        padding: 13px;
+    }
+}
+
+/* PART-3 */
+@media screen and (max-width: 390px) {
+    #container-navbar li a {
+        font-size: .9rem;
+        padding: 0 1px;
+    }
+
+    #container-home p {
+        font-size: .9rem;
+    }
+
+    .h-primary {
+        font-size: 2.2rem;
+    }
+
+    .h-secondary {
+        font-size: 1.5rem;
+
+    }
+
+    #services .box p {
+        font-size: .8rem;
+        text-align: center;
+    }
+    
+    
+    footer {
+        font-size: .6rem;
+        
+    }
+}
+
+/* PART-4 */
+@media screen and (max-width: 350px) {
+    #container-navbar ul {
+        flex-direction: column;
+    }
+    #container-navbar li a {
+        padding: 3px 1px;
+        margin-left: 36px;
+    }
+
+    #container-home::before {
+        top: -172px;
+        height: 132%;
+    }
+    #services .box img {
+        height: 105px;
+    }
+
+   
+}
